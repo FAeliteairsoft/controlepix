@@ -30,14 +30,14 @@
     import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
 
     const firebaseConfig = {
-      apiKey: "AIzaSyCjoW-Qm_MAwoj5uLS4PDGD0C6uweoS4dg",
-      authDomain: "contribuicao-pix.firebaseapp.com",
-      projectId: "contribuicao-pix",
-      storageBucket: "contribuicao-pix.appspot.com",
-      messagingSenderId: "807746502345",
-      appId: "1:807746502345:web:92b9bd99e0b4507f8cd718",
-      measurementId: "G-02F59QDHPQ"
-    };
+  apiKey: "AIzaSyCjoW-Qm_MAwoj5uLS4PDGD0C6uweoS4dg",
+  authDomain: "contribuicao-pix.firebaseapp.com",
+  projectId: "contribuicao-pix",
+  storageBucket: "contribuicao-pix.firebasestorage.app",
+  messagingSenderId: "807746502345",
+  appId: "1:807746502345:web:92b9bd99e0b4507f8cd718",
+  measurementId: "G-02F59QDHPQ"
+};
 
     const app = initializeApp(firebaseConfig);
     const db  = getFirestore(app);
