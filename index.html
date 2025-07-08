@@ -1,36 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Controle Pix - F.A TEAM ELITE</title>
 
-    <!-- Firebase SDKs diretamente do CDN -->
+    <!-- Firebase SDKs (modo compat) -->
     <script src="https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/11.10.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js"></script>
 
     <script>
-      // CONFIGURAÇÃO DO FIREBASE - substitua pelos seus dados reais:
+      // CONFIGURAÇÃO DO FIREBASE
       const firebaseConfig = {
-  apiKey: "AIzaSyCjoW-Qm_MAwoj5uLS4PDGD0C6uweoS4dg",
-  authDomain: "contribuicao-pix.firebaseapp.com",
-  projectId: "contribuicao-pix",
-  storageBucket: "contribuicao-pix.firebasestorage.app",
-  messagingSenderId: "807746502345",
-  appId: "1:807746502345:web:92b9bd99e0b4507f8cd718",
-  measurementId: "G-02F59QDHPQ"
-};
+        apiKey: "AIzaSyCjoW-Qm_MAwoj5uLS4PDGD0C6uweoS4dg",
+        authDomain: "contribuicao-pix.firebaseapp.com",
+        projectId: "contribuicao-pix",
+        storageBucket: "contribuicao-pix.appspot.com",
+        messagingSenderId: "807746502345",
+        appId: "1:807746502345:web:92b9bd99e0b4507f8cd718",
+        measurementId: "G-02F59QDHPQ"
+      };
 
-      // Inicializar Firebase
+      // Inicializar Firebase (modo compatível com GitHub Pages)
       firebase.initializeApp(firebaseConfig);
       firebase.analytics();
+
+      // Teste de conexão (opcional)
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("status").textContent = "✅ Firebase carregado com sucesso.";
+      });
     </script>
 
     <style>
       body {
         background: #ECEFF1;
-        color: rgba(0,0,0,0.87);
+        color: rgba(0, 0, 0, 0.87);
         font-family: Roboto, Helvetica, Arial, sans-serif;
         margin: 0;
         padding: 0;
@@ -41,7 +46,7 @@
         margin: 100px auto 16px;
         padding: 32px 24px;
         border-radius: 3px;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
       }
       #message h2 {
         color: #ffa100;
@@ -52,7 +57,7 @@
       #message h1 {
         font-size: 22px;
         font-weight: 300;
-        color: rgba(0,0,0,0.6);
+        color: rgba(0, 0, 0, 0.6);
         margin: 0 0 16px;
       }
       #message p {
@@ -69,10 +74,10 @@
         color: white;
         padding: 16px;
         border-radius: 4px;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
       }
-      #load {
-        color: rgba(0,0,0,0.4);
+      #status {
+        color: rgba(0, 0, 0, 0.4);
         text-align: center;
         font-size: 13px;
       }
@@ -83,21 +88,8 @@
       <h2>Controle Pix</h2>
       <h1>Firebase Pronto</h1>
       <p>Agora você pode usar o Firestore e outras funcionalidades para registrar contribuições da equipe.</p>
-      <a target="_blank" href="https://firebase.google.com/docs/web/setup">Ver Documentação</a>
+      <a target="_blank" href="https://firebase.google.com/docs/web/setup">VER DOCUMENTAÇÃO</a>
     </div>
-    <p id="load">Firebase SDK carregado…</p>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        try {
-          let app = firebase.app();
-          loadEl.textContent = 'Firebase SDK carregado com sucesso.';
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Erro ao carregar o Firebase SDK. Veja o console.';
-        }
-      });
-    </script>
+    <p id="status">Carregando Firebase…</p>
   </body>
 </html>
